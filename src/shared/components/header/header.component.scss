@@ -1,0 +1,17 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+  background-color: white;
+  margin-bottom: 4rem;
+
+  .header-title {
+    font-family: "Roboto Slab", sans-serif;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,46 @@
+.notification {
+  position: absolute;
+  display: flex;
+  gap: 0.1rem;
+  top: 1rem;
+  right: 1rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  z-index: 9999;
+  transition: all .3s;
+  width: 300px;
+  max-width: 350px;
+}
+
+.warning {
+  background-color: #f4c836;
+  color: var(--primary-dark);
+}
+
+.success {
+  background-color: #56be2b;
+  color: white;
+}
+
+.info {
+  background-color: #2749ef;
+  color: white;
+}
+
+.error {
+  background-color: #f44336;
+  color: white;
+}
+
+.toast-content {
+  font-size: 1ren;
+  font-weight: 600;
+}
+
+.close-btn {
+  cursor: pointer;
+
+  :active {
+    transform: scale(1.05);
+  }
+}

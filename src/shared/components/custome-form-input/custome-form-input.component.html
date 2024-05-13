@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label>{{ label }}</label>
+  <input [formControl]="control" [ngClass]="{'has-error': control.invalid && control.touched }"
+         [placeholder]="placeholder" [readonly]="disabled" [type]="type" (blur)="onBlur($event)" class="form-control has-error">
+  <div [ngClass]="{'hidden': (control.valid || !control.touched)}" class="error-message">
+    @if (control.errors?.['required']) {
+      Este campo es requerido!
+    } @else {
+      {{ label }} no válido!
+    }
+  </div>
+</div>

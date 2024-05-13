@@ -1,0 +1,109 @@
+<div class="data-table">
+  <div class="table-container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Nombre del producto</th>
+        <th>Descripción</th>
+        <th>Fecha de liberación</th>
+        <th>Fecha de reestructuración</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        @if (isLoading) {
+          <tr>
+            <td>
+              <app-skeleton/>
+            </td>
+            <td>
+              <app-skeleton/>
+            </td>
+            <td>
+              <app-skeleton/>
+            </td>
+            <td>
+              <app-skeleton/>
+            </td>
+            <td>
+              <app-skeleton/>
+            </td>
+            <td>
+              <app-skeleton/>
+            </td>
+          </tr>
+        } @else {
+          @if(data.length === 0){
+            <tr>
+              <td colspan="6" class="empty">
+                No se encontraron registros
+              </td>
+            </tr>
+
+          } @else {
+            @for (item of data | slice: (currentPage - 1) * pageSize : currentPage * pageSize | filter:search; track item.id){
+              <tr>
+                <td style="text-align: center">
+                  <img alt="{{'logo-'+item.id}}" [src]="item.logo" class="logo rounded"/>
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.date_release }}</td>
+                <td>{{ item.date_revision }}</td>
+                <td>
+                  <app-custome-dropdown (edit)="onEdit(item)" (delete)="onDelete(item)"/>
+                </td>
+              </tr>
+            }
+          }
+
+
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <div class="pagination">
+      @if (isLoading) {
+        <div class="skeleton">
+          <app-skeleton/>
+        </div>
+        <div class="skeleton-pages">
+          <app-skeleton/>
+        </div>
+        <div class="skeleton">
+          <app-skeleton/>
+        </div>
+      } @else {
+        <button class="btn btn-link" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)"><</button>
+        @for (page of totalPages; track page) {
+          <button class="btn btn-page" [class.active]="page === currentPage" (click)="onPageChange(page)">{{ page }}
+          </button>
+        }
+        <button class="btn btn-link" [disabled]="currentPage === totalPages.length"
+                (click)="onPageChange(currentPage + 1)">>
+        </button>
+        <span class="resume">{{ data.length }} {{ data.length === 1 ? 'Resultado' : 'Resultados' }}</span>
+      }
+    </div>
+
+
+    <div class="page-size">
+      @if (isLoading) {
+        <div class="skeleton-select">
+          <app-skeleton/>
+        </div>
+      } @else {
+        <select (change)="onPageSizeChange($event)">
+          @for (option of pageSizeOptions; track option) {
+            <option [value]="option" [selected]="option === pageSize">{{ option }}</option>
+          }
+        </select>
+      }
+    </div>
+  </footer>
+
+
+</div>

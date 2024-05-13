@@ -1,0 +1,50 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+
+  ::placeholder {
+    color: #f1f1f1;
+  }
+}
+
+.has-error {
+  border: 1px solid red;
+}
+
+
+input:read-only {
+  background-color: #f1f1f1;
+  color: #a6a6a6;
+
+  ::placeholder {
+    color: #d3d3d3;
+  }
+}
+
+
+/* Estilo cuando el input está enfocado */
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-dark);
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

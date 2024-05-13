@@ -1,0 +1,29 @@
+<aside class="products-list-container">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <input [(ngModel)]="searchInput" placeholder="Search..." type="text" [disabled]="isLoading">
+    <button (click)="goToAddProduct()" class="primary-button">
+      Agregar
+    </button>
+  </div>
+  <div>
+    <app-custome-data-table
+      [data]="products"
+      [search]="searchInput"
+      [isLoading]="isLoading"
+      (delete)="onDelete($event)"
+      (edit)="onEdit($event)"
+    ></app-custome-data-table>
+  </div>
+</aside>
+
+<app-custome-modal [isOpen]="openModal">
+  <span class="desc">¿Estas seguro de eliminar el producto {{elemToDelete.name}}?</span>
+  <footer class="btn-container">
+    <button (click)="openModal = false">
+      Cancelar
+    </button>
+    <button (click)="callToDelete(elemToDelete)" class="primary-button">
+      Confirmar
+    </button>
+  </footer>
+</app-custome-modal>

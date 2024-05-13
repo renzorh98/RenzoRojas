@@ -1,0 +1,12 @@
+<div class="dropdown">
+  <button (click)="toggleDropdown()">
+    ☰
+  </button>
+
+  @if(isOpen){
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" (click)="onEditClicked()">Editar</a>
+      <a class="dropdown-item delete" (click)="onDeleteClicked()">Eliminar</a>
+    </div>
+  }
+</div>

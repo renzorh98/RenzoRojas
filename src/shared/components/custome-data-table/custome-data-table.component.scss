@@ -1,0 +1,114 @@
+.data-table{
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.table-container {
+  width: 100%;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+
+  table{
+    width: 100%;
+  }
+
+  thead{
+    background-color: var(--background-color);
+  }
+
+  th{
+    text-align: left;
+    padding: 0.5rem;
+
+    &:not(:last-child){
+      min-width: 150px;
+    }
+
+    :last-child{
+      width: 3rem;
+    }
+  }
+  td{
+    padding: 0.1rem 0.75rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+
+    &:not(:last-child){
+      max-width: 200px;
+      min-width: 150px;
+    }
+
+    :last-child{
+      width: 3rem;
+    }
+  }
+
+  .empty{
+    text-align: center;
+    font-weight: 100;
+    color: #cccccc;
+    font-size: 3rem;
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .pagination{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    .btn{
+      width: 2rem;
+      height: 2rem;
+      font-weight: bold;
+    }
+
+    .btn-link{
+      padding: 0;
+    }
+
+    .btn-page{
+      background: none;
+      padding: 0;
+      color: var(--primary-baby);
+    }
+
+    .active{
+      color: var(--primary-dark);
+    }
+
+    .resume{
+      font-weight: 300;
+      padding-left: 0.5rem;
+    }
+
+    .skeleton{
+      width: 2rem;
+    }
+
+    .skeleton-pages{
+      width: 4rem;
+    }
+  }
+
+  .page-size{
+    select{
+      padding: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .skeleton-select{
+      width: 3rem;
+    }
+  }
+}
