@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {CustomeFormInputComponent} from "../../../shared/components/custome-form-input/custome-form-input.component";
+import {CustomFormInputComponent} from "../../../shared/components/custome-form-input/custom-form-input.component";
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {ProductsService} from "../../core/api/products/products.service";
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
   selector: 'app-products-add',
   standalone: true,
   imports: [
-    CustomeFormInputComponent,
+    CustomFormInputComponent,
     ReactiveFormsModule
   ],
   templateUrl: './products-add.component.html',
@@ -113,7 +113,6 @@ export class ProductsAddComponent implements OnDestroy {
   validateId() {
     if (this.idControl.valid && !this.isEdit) {
       this.productsS.validateId(this.idControl.value).subscribe((resp) => {
-        console.log(resp)
 
         if (resp) {
           this.idControl.setErrors({'idExists': true})

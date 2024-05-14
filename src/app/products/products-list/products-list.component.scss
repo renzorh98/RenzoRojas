@@ -6,6 +6,12 @@
   padding-right: 3rem;
 }
 
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
 .btn-container{
   margin-top: 5rem;
   display: flex;

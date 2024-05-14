@@ -8,7 +8,7 @@
     <hr/>
     <div>
       <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
-        <app-custome-form-input
+        <app-custom-form-input
           [control]="idControl"
           [label]="'ID'"
           [placeholder]="'ID'"
@@ -16,32 +16,32 @@
           (blur)="validateId()"
         />
 
-        <app-custome-form-input
+        <app-custom-form-input
           [control]="nameControl"
           [label]="'Nombre'"
           [placeholder]="'Nombre'"
         />
 
-        <app-custome-form-input
+        <app-custom-form-input
           [control]="descriptionControl"
           [label]="'Descripción'"
           [placeholder]="'Descripción'"
         />
 
-        <app-custome-form-input
+        <app-custom-form-input
           [control]="logoControl"
           [label]="'Logo'"
           [placeholder]="'Logo'"
         />
 
-        <app-custome-form-input
+        <app-custom-form-input
           [control]="dateReleaseControl"
           [label]="'Fecha Liberación'"
           [placeholder]="'DD/MM/YYYY'"
           type="date"
         />
 
-        <app-custome-form-input
+        <app-custom-form-input
           [control]="dateRevisionControl"
           [disabled]="true"
           [label]="'Fecha Revision'"

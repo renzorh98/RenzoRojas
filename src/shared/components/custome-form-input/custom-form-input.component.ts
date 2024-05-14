@@ -3,13 +3,13 @@ import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgClass} from "@angular/common";
 
 @Component({
-  selector: 'app-custome-form-input',
+  selector: 'app-custom-form-input',
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, NgClass],
-  templateUrl: './custome-form-input.component.html',
-  styleUrl: './custome-form-input.component.scss'
+  templateUrl: './custom-form-input.component.html',
+  styleUrl: './custom-form-input.component.scss'
 })
-export class CustomeFormInputComponent {
+export class CustomFormInputComponent {
   @Input() label: string = '';
   @Input() control!: FormControl;
   @Input() placeholder: string = '';
