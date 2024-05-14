@@ -50,7 +50,7 @@
       </form>
     </div>
     <footer class="button-container">
-      <button>
+      <button (click)="productForm.reset()">
         Reiniciar
       </button>
       <button (click)="onSubmit()" [disabled]="productForm.invalid || !productForm.dirty" class="primary-button">
