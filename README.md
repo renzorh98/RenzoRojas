@@ -5,7 +5,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Before all
 
 This project was developed with the next configuration
-* Angular CLI: 15.1.4
 * Node: 20.11.1
 * npm: 10.2.4
 
