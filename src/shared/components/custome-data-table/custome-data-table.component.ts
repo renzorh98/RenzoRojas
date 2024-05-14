@@ -12,7 +12,7 @@ import {SkeletonComponent} from "../skeleton/skeleton.component";
     SlicePipe,
     CustomeDropdownComponent,
     FilterPipe,
-    SkeletonComponent
+    SkeletonComponent,
   ],
   templateUrl: './custome-data-table.component.html',
   styleUrl: './custome-data-table.component.scss'

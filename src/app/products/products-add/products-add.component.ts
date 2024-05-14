@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {CustomFormInputComponent} from "../../../shared/components/custome-form-input/custom-form-input.component";
+import {CustomFormInputComponent} from "../../../shared/components/custom-form-input/custom-form-input.component";
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {ProductsService} from "../../core/api/products/products.service";
